@@ -26,16 +26,16 @@ TIMEHOURTIMEKEEPING="$( date +'%H')"
 
 
 
-# If not time hour at 12 (12 am), exit.
+# If not time hour at 12 (12), exit.
 if ! [ "$TIMEHOURTIMEKEEPING" == "12" ]; then exit; fi
 
-# If time hour is at 12 (12 am), continue.
+# If time hour is at 12 (12), continue.
 if [ "$TIMEHOURTIMEKEEPING" == "12" ]; then echo "Running noisemaker!"; fi
 
 # Play sound and show zenity box
 if [ "$TIMEHOURTIMEKEEPING" == "12" ]; then bash noisemaker.sh; fi
 
-# If not time hour 12 (12 am), sleep repeatedly until it changes.
+# If not time hour 12 (12), sleep repeatedly until it changes.
 if ! [ "$TIMEHOURTIMEKEEPING" == "12" ]; then while ! $TIMEHOURTIMEKEEPING == "*"; do sleep 1; done; fi
 
 # The user dealt with Zenity, we kill music BUT NOT THE WHOLE SCRIPT, then resume as normal checking for time.

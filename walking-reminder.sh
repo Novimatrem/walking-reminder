@@ -67,7 +67,7 @@ if [ $TIMEHOURTIMEKEEPING -eq 12 ]
 then
 if [ $TIMEMINUTETIMEKEEPING -eq 30 ]
 then
-    echo "Time is 12:30am, do attempt!"
+    echo "Time is 12:30 mid-day, do attempt!"
     echo ""
     sleep 0s
     bash alert.sh
